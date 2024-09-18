@@ -10,11 +10,12 @@ import java.util.ArrayList;
  *
  * @author Elba Aban
  */
+import java.time.LocalDate;
 public class documento {
     private vendedor vendedor;
     private cliente cliente;
     private ArrayList<detalleproducto> detalleproducto;
-    private String fecha_emitido;
+    private LocalDate fecha_emitido;
     
     
 /*public factura(String tipo_factura, factura_y_presupuesto.vendedor vendedor,
@@ -24,7 +25,7 @@ public class documento {
     }
 */
 
-    public documento(vendedor vendedor, cliente cliente, String fecha_emitido) {
+    public documento(vendedor vendedor, cliente cliente, LocalDate fecha_emitido) {
         this.vendedor = vendedor;
         this.cliente = cliente;
          detalleproducto = new ArrayList();
@@ -53,10 +54,10 @@ public class documento {
      getDetalles().remove(detalle);
     
     }
-    public String getFecha_emitido() {
+    public LocalDate getFecha_emitido() {
         return fecha_emitido;
     }
     
-    
+   
     
 }

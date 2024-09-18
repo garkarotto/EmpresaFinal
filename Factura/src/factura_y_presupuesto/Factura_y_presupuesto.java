@@ -8,6 +8,8 @@ package factura_y_presupuesto;
  *
  * @author Elba Aban
  */
+import java.time.LocalDate;
+import java.time.Month;
 public class Factura_y_presupuesto {
 
     /**
@@ -28,7 +30,9 @@ presupuestos a partir de las ventas realizadas.
 Instanciar facturas y presupuestos.
 
      */
+
     public static void main(String[] args) {
+        GestorDocumento control = new GestorDocumento();
         cliente luquitasCliente = new cliente("lucas", 221, "1900", "521 ");
         cliente facuCliente = new cliente("facu", 221, "1900", "521 ");
         cliente MarianCliente = new cliente("marian", 221, "1900", "521 ");
@@ -49,21 +53,27 @@ Instanciar facturas y presupuestos.
         
         
         //String tipo_factura, vendedor vendedor, cliente cliente, String fecha
-        factura facturaA = new factura ("factura A", ElbaVendedor1, facuCliente, "28/11/2024");
-        factura facturaB = new factura ("factura B", MariaVendedor2, luquitasCliente, "28/11/2024");
-        factura facturaC = new factura ("factura C", ElbaVendedor1, MarianCliente, "28/11/2024");
+        factura facturaA = new factura ("factura A", ElbaVendedor1, facuCliente, LocalDate.of(2024,8,18));
+        factura facturaB = new factura ("factura B", MariaVendedor2, luquitasCliente, LocalDate.of(2024,8,10));
+        factura facturaC = new factura ("factura C", ElbaVendedor1, MarianCliente, LocalDate.of(2023,10,15));
     
         
-        //facturaA.agregarProducto(detalle3);
-        //facturaA.mostrarCompra();
+        facturaA.agregarProducto(detalle3);
+        facturaB.agregarProducto(detalle2);
+        facturaC.agregarProducto(detalle1);
+        facturaA.mostrarCompra();
         
-        presupuesto presupuesto1 = new presupuesto(  ElbaVendedor1, facuCliente, "13/09/2024","21/09/2024");
-       presupuesto1.agregarProducto(detalle1);
-             presupuesto1.agregarProducto(detalle2);
-       presupuesto1.mostrarProductos();
+        
+        presupuesto presupuesto1 = new presupuesto(  ElbaVendedor1, facuCliente, LocalDate.of(2024, 2, 20),LocalDate.of(2024,12,1));
+       // presupuesto1.agregarProducto(detalle1);
+       // presupuesto1.agregarProducto(detalle2);
+       //presupuesto1.mostrarProductos();
       
-    
-    
+        
+       control.AgregarDocumento(facturaA);
+       control.AgregarDocumento(facturaB);
+       
+       control.InformeVentaRealizada(LocalDate.of(2024,8,18));
     }
     
 }

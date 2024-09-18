@@ -8,13 +8,14 @@ package factura_y_presupuesto;
  *
  * @author Elba Aban
  */
+import java.time.LocalDate;
 public class factura extends documento {
 
     private String tipo_factura;
 
     //vendedor vendedor, cliente cliente, String fecha_emitido
-    public factura(String tipo_factura, vendedor vendedor, cliente cliente, String fecha) {
-        super(vendedor, cliente, fecha);
+    public factura(String tipo_factura, vendedor vendedor, cliente cliente, LocalDate fecha_emitido) {
+        super(vendedor, cliente, fecha_emitido);
         this.tipo_factura = tipo_factura;
 
     }
@@ -24,19 +25,15 @@ public class factura extends documento {
     }
 
     public void mostrarProductos() {
-        System.out.println("producto: ");
+        System.out.println("productos: ");
         //for normal 
         for (int i = 0; i < getDetalles().size(); i++) {
-            System.out.println("-----------------------");
             //acceder a la coleccion detalle, nos posiciona en la posicion i (ej 5)
             System.out.println("nombre: " + getDetalles().get(i).getProducto().getNombre());
             System.out.println("la cantidad es :  " + getDetalles().get(i).getCantidad());
             System.out.println("el valor por producto es: " + getDetalles().get(i).getProducto().getPrecio());
-            System.out.println("el total es : " + getDetalles().get(i).getSubtotal());
-            System.out.println("-----------------------");
-            
-
-        };
+            System.out.println("el total es : " + getDetalles().get(i).getSubtotal());           
+        }
 
     }
 
@@ -50,7 +47,6 @@ public class factura extends documento {
 
         System.out.println("---------------------------");
         mostrarProductos();
-         System.out.println("la fecha de emision es : " + getFecha_emitido());
     }
 
 }

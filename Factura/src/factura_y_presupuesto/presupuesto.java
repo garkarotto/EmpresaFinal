@@ -8,17 +8,18 @@ package factura_y_presupuesto;
  *
  * @author Elba Aban
  */
+import java.time.LocalDate;
 public class presupuesto extends documento {
 
-    private String fecha_caducidad;
+    private LocalDate fecha_caducidad;
 
-    public presupuesto(  vendedor vendedor, cliente cliente, String fecha, String fecha_caducidad) {
-        super(vendedor, cliente, fecha);
+    public presupuesto(  vendedor vendedor, cliente cliente, LocalDate fecha_emitido, LocalDate fecha_caducidad) {
+        super(vendedor, cliente, fecha_emitido);
 
         this.fecha_caducidad = fecha_caducidad;
     }
 
-    public String getFecha_caducidad() {
+    public LocalDate getFecha_caducidad() {
         return fecha_caducidad;
     }
 
