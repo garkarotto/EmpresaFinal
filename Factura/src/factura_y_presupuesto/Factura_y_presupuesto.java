@@ -28,9 +28,9 @@ importe, este se calcula con la cantidad y precio unitario del producto.
 * Realizar un programa que muestre la generación de facturas y
 presupuestos a partir de las ventas realizadas.
 Instanciar facturas y presupuestos.
-
+//elba was here
      */
-
+//sdfsjdhfkjshdkfjkjsdfhkjfkdjhkhkj
     public static void main(String[] args) {
         GestorDocumento control = new GestorDocumento();
         cliente luquitasCliente = new cliente("lucas", 221, "1900", "521 ");
@@ -44,7 +44,7 @@ Instanciar facturas y presupuestos.
         producto azucar = new producto ("azucar", 1000, "1 kilo", "ledesma");
         producto yerba = new producto ("yerba", 2000, "1 kilo", "playadito");
         producto fideo = new producto ("fideo", 1200, "1/2 kilo", "mostachol");
-        
+        producto leche = new producto ("leche", 1500, "1 litro", "larga vida");
         
         //int cantidad, int codigo_barra,   double total, producto producto
         detalleproducto detalle1 = new detalleproducto (4,  1250, fideo);
