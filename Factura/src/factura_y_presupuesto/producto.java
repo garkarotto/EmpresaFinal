@@ -13,12 +13,14 @@ public class producto {
      private double precio;
      private String unidad_medida;
      private String descripcion;
+     private int codigo;
 
-    public producto(String nombre, double precio, String unidad_medida, String descripcion) {
+    public producto(int codigo,String nombre, double precio, String unidad_medida, String descripcion) {
         this.nombre = nombre;
         this.precio = precio;
         this.unidad_medida = unidad_medida;
         this.descripcion = descripcion;
+        this.codigo = codigo;
     }
 
     public String getNombre() {
@@ -37,4 +39,7 @@ public class producto {
         return descripcion;
     }
      
+    public int getCodigo(){
+        return this.codigo;
+    }
 }

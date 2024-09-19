@@ -41,15 +41,15 @@ Instanciar facturas y presupuestos.
         vendedor MariaVendedor2 = new vendedor("maria", "aban", "motomel", 3);
          
         
-        producto azucar = new producto ("azucar", 1000, "1 kilo", "ledesma");
-        producto yerba = new producto ("yerba", 2000, "1 kilo", "playadito");
-        producto fideo = new producto ("fideo", 1200, "1/2 kilo", "mostachol");
+        producto azucar = new producto (1,"azucar", 1000, "1 kilo", "ledesma");
+        producto yerba = new producto (2,"yerba", 2000, "1 kilo", "playadito");
+        producto fideo = new producto (3,"fideo", 1200, "1/2 kilo", "mostachol");
         
         
-        //int cantidad, int codigo_barra,   double total, producto producto
-        detalleproducto detalle1 = new detalleproducto (4,  1250, fideo);
-        detalleproducto detalle2 = new detalleproducto (2,  1350, yerba);
-        detalleproducto detalle3 = new detalleproducto (5,   900, azucar);
+        //double cantidad,String desc,  producto producto
+        detalleproducto detalle1 = new detalleproducto (4,"Fideos monitos", fideo);
+        detalleproducto detalle2 = new detalleproducto (2,  "Playadito", yerba);
+        detalleproducto detalle3 = new detalleproducto (5,   "Ledesma", azucar);
         
         
         //String tipo_factura, vendedor vendedor, cliente cliente, String fecha

@@ -10,17 +10,13 @@ package factura_y_presupuesto;
  */
 public class detalleproducto {
     private double cantidad;
-    private int codigo_barra;
-   
     private double total;
     private producto producto;
-
-    public detalleproducto(double cantidad, int codigo_barra,  producto producto) {
+    private String Descripcion;
+    public detalleproducto(double cantidad,String desc,  producto producto) {
         this.cantidad = cantidad;
-        
-       this.codigo_barra= codigo_barra;
-       
         this.producto = producto;
+        this.Descripcion = desc;
     }
     public producto getProducto(){
         return this.producto;
@@ -35,12 +31,10 @@ public class detalleproducto {
     public double getCantidad() {
         return cantidad;
     }
-  public int getCodigo_barra(){
-      return codigo_barra;
-  }
-    
-
-    
+ 
+    public String getDescripcion(){
+        return this.Descripcion;
+    }
 
     public double getTotal() {
         return total;
