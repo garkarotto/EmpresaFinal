@@ -32,7 +32,7 @@ Instanciar facturas y presupuestos.
      */
 //sdfsjdhfkjshdkfjkjsdfhkjfkdjhkhkj
     
-    //123123123
+    //123123123...........
     public static void main(String[] args) {
         GestorDocumento control = new GestorDocumento();
         cliente luquitasCliente = new cliente("lucas", 221, "1900", "521 ");
