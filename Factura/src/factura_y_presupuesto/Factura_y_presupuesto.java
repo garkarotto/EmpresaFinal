@@ -13,21 +13,7 @@ import java.time.Month;
 public class Factura_y_presupuesto {
 
     /**
-     *  Se necesita realizar un programa para manipular los datos de facturas y
-presupuestos. De cada factura se conoce nombre del cliente, teléfono,
-dirección, provincia, código postal, email, fecha de emisión, total y tipo de
-factura. Las facturas pueden ser A, B o C. Además los datos del vendedor:
-nombre y apellido o razón social, domicilio y cuit. El presupuesto consta de
-nombre del cliente, teléfono, dirección, provincia, código postal, email, fecha
-de emisión, fecha de caducidad y total. Tener presente que en una misma
-factura o presupuesto puede haber una o varias líneas de detalle con los
-siguientes datos: cantidad, descripción del producto, precio unitario e
-importe, este se calcula con la cantidad y precio unitario del producto.
-
-* 
-* Realizar un programa que muestre la generación de facturas y
-presupuestos a partir de las ventas realizadas.
-Instanciar facturas y presupuestos.
+     *  Ventanas
 
      */
 
