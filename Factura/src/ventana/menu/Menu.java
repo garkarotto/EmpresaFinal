@@ -29,48 +29,39 @@ public class Menu extends javax.swing.JFrame {
         jLabel_Titulo = new javax.swing.JLabel();
         jButton_CargarCliente = new javax.swing.JButton();
         jButton_CargarVendedor = new javax.swing.JButton();
-        jButton_CargarProducto = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jLabel_Titulo.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
-        jLabel_Titulo.setText("Tp facturacion");
+        jLabel_Titulo.setText("Pagina principal");
 
-        jButton_CargarCliente.setText("Cargar cliente");
+        jButton_CargarCliente.setText("Ingresar como cliente");
 
-        jButton_CargarVendedor.setText("Cargar vendedor");
-
-        jButton_CargarProducto.setText("Cargar producto");
+        jButton_CargarVendedor.setText("Ingresar como administrador");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(119, 119, 119)
-                        .addComponent(jLabel_Titulo))
-                    .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
+                .addGap(105, 105, 105)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jButton_CargarVendedor)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addComponent(jButton_CargarCliente)
-                        .addGap(18, 18, 18)
-                        .addComponent(jButton_CargarVendedor)
-                        .addGap(18, 18, 18)
-                        .addComponent(jButton_CargarProducto)))
-                .addContainerGap(20, Short.MAX_VALUE))
+                        .addComponent(jLabel_Titulo)))
+                .addContainerGap(112, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel_Titulo)
-                .addGap(27, 27, 27)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton_CargarCliente)
-                    .addComponent(jButton_CargarVendedor)
-                    .addComponent(jButton_CargarProducto))
-                .addContainerGap(212, Short.MAX_VALUE))
+                .addGap(34, 34, 34)
+                .addComponent(jButton_CargarCliente)
+                .addGap(32, 32, 32)
+                .addComponent(jButton_CargarVendedor)
+                .addContainerGap(150, Short.MAX_VALUE))
         );
 
         pack();
@@ -113,7 +104,6 @@ public class Menu extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton_CargarCliente;
-    private javax.swing.JButton jButton_CargarProducto;
     private javax.swing.JButton jButton_CargarVendedor;
     private javax.swing.JLabel jLabel_Titulo;
     // End of variables declaration//GEN-END:variables
