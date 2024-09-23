@@ -151,7 +151,6 @@ public class CargarPresupuesto extends javax.swing.JFrame {
                                         .addGap(41, 41, 41)
                                         .addComponent(jTextField_direccion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
                             .addGroup(layout.createSequentialGroup()
-                                .addGap(0, 0, Short.MAX_VALUE)
                                 .addComponent(jLabel_total)
                                 .addGap(41, 41, 41)
                                 .addComponent(jLabel_totalventa)
