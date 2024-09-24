@@ -30,7 +30,6 @@ public class MostrarDetalle extends javax.swing.JFrame {
         jLabel_codigodebarra = new javax.swing.JLabel();
         jLabel_preciounitario = new javax.swing.JLabel();
         jLabel_cantidad = new javax.swing.JLabel();
-        jLabel_subtotal = new javax.swing.JLabel();
         jLabel_nombreproducto = new javax.swing.JLabel();
         jLabel_precio = new javax.swing.JLabel();
         jLabel_unidaddemedida = new javax.swing.JLabel();
@@ -39,7 +38,6 @@ public class MostrarDetalle extends javax.swing.JFrame {
         jLabel_Precio = new javax.swing.JLabel();
         jLabel_preciounitario1 = new javax.swing.JLabel();
         jLabel_cantidad1 = new javax.swing.JLabel();
-        jLabel_subtotal1 = new javax.swing.JLabel();
         jLabel_unidad = new javax.swing.JLabel();
         jLabel_descripcion1 = new javax.swing.JLabel();
         jLabel_codigodebarra1 = new javax.swing.JLabel();
@@ -56,8 +54,6 @@ public class MostrarDetalle extends javax.swing.JFrame {
 
         jLabel_cantidad.setText("Cantidad");
 
-        jLabel_subtotal.setText("Subtotal");
-
         jLabel_nombreproducto.setText("Nombre producto");
 
         jLabel_precio.setText("Precio");
@@ -73,8 +69,6 @@ public class MostrarDetalle extends javax.swing.JFrame {
         jLabel_preciounitario1.setText("Precio unitario");
 
         jLabel_cantidad1.setText("Cantidad");
-
-        jLabel_subtotal1.setText("Subtotal");
 
         jLabel_unidad.setText("Unidad de medida");
 
@@ -102,7 +96,6 @@ public class MostrarDetalle extends javax.swing.JFrame {
                             .addComponent(jLabel_codigodebarra)
                             .addComponent(jLabel_preciounitario)
                             .addComponent(jLabel_cantidad)
-                            .addComponent(jLabel_subtotal)
                             .addComponent(jLabel_unidaddemedida)
                             .addComponent(jLabel_descripcion))
                         .addGap(104, 104, 104)
@@ -110,7 +103,6 @@ public class MostrarDetalle extends javax.swing.JFrame {
                             .addComponent(jLabel_codigodebarra1)
                             .addComponent(jLabel_preciounitario1)
                             .addComponent(jLabel_cantidad1)
-                            .addComponent(jLabel_subtotal1)
                             .addComponent(jLabel_unidad)
                             .addComponent(jLabel_descripcion1)
                             .addComponent(jLabel_Precio)
@@ -144,9 +136,7 @@ public class MostrarDetalle extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(jLabel_codigodebarra)
                         .addGap(18, 18, 18)
-                        .addComponent(jLabel_preciounitario)
-                        .addGap(18, 18, 18)
-                        .addComponent(jLabel_subtotal))
+                        .addComponent(jLabel_preciounitario))
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jLabel_unidad)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -156,10 +146,8 @@ public class MostrarDetalle extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(jLabel_codigodebarra1)
                         .addGap(18, 18, 18)
-                        .addComponent(jLabel_preciounitario1)
-                        .addGap(18, 18, 18)
-                        .addComponent(jLabel_subtotal1)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 50, Short.MAX_VALUE)
+                        .addComponent(jLabel_preciounitario1)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 84, Short.MAX_VALUE)
                 .addComponent(jButton_volver)
                 .addContainerGap())
         );
@@ -217,8 +205,6 @@ public class MostrarDetalle extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel_precio;
     private javax.swing.JLabel jLabel_preciounitario;
     private javax.swing.JLabel jLabel_preciounitario1;
-    private javax.swing.JLabel jLabel_subtotal;
-    private javax.swing.JLabel jLabel_subtotal1;
     private javax.swing.JLabel jLabel_unidad;
     private javax.swing.JLabel jLabel_unidaddemedida;
     // End of variables declaration//GEN-END:variables

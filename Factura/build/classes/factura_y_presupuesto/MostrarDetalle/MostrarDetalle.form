@@ -38,7 +38,6 @@
                           <Component id="jLabel_codigodebarra" alignment="0" min="-2" max="-2" attributes="0"/>
                           <Component id="jLabel_preciounitario" alignment="0" min="-2" max="-2" attributes="0"/>
                           <Component id="jLabel_cantidad" alignment="0" min="-2" max="-2" attributes="0"/>
-                          <Component id="jLabel_subtotal" alignment="0" min="-2" max="-2" attributes="0"/>
                           <Component id="jLabel_unidaddemedida" alignment="0" min="-2" max="-2" attributes="0"/>
                           <Component id="jLabel_descripcion" alignment="0" min="-2" max="-2" attributes="0"/>
                       </Group>
@@ -47,7 +46,6 @@
                           <Component id="jLabel_codigodebarra1" alignment="0" min="-2" max="-2" attributes="0"/>
                           <Component id="jLabel_preciounitario1" alignment="0" min="-2" max="-2" attributes="0"/>
                           <Component id="jLabel_cantidad1" alignment="0" min="-2" max="-2" attributes="0"/>
-                          <Component id="jLabel_subtotal1" alignment="0" min="-2" max="-2" attributes="0"/>
                           <Component id="jLabel_unidad" alignment="0" min="-2" max="-2" attributes="0"/>
                           <Component id="jLabel_descripcion1" alignment="0" min="-2" max="-2" attributes="0"/>
                           <Component id="jLabel_Precio" min="-2" max="-2" attributes="0"/>
@@ -90,8 +88,6 @@
                       <Component id="jLabel_codigodebarra" min="-2" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
                       <Component id="jLabel_preciounitario" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Component id="jLabel_subtotal" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <Group type="102" attributes="0">
                       <Component id="jLabel_unidad" min="-2" max="-2" attributes="0"/>
@@ -103,11 +99,9 @@
                       <Component id="jLabel_codigodebarra1" min="-2" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
                       <Component id="jLabel_preciounitario1" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Component id="jLabel_subtotal1" min="-2" max="-2" attributes="0"/>
                   </Group>
               </Group>
-              <EmptySpace pref="50" max="32767" attributes="0"/>
+              <EmptySpace pref="84" max="32767" attributes="0"/>
               <Component id="jButton_volver" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
           </Group>
@@ -136,11 +130,6 @@
     <Component class="javax.swing.JLabel" name="jLabel_cantidad">
       <Properties>
         <Property name="text" type="java.lang.String" value="Cantidad"/>
-      </Properties>
-    </Component>
-    <Component class="javax.swing.JLabel" name="jLabel_subtotal">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="Subtotal"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel_nombreproducto">
@@ -181,11 +170,6 @@
     <Component class="javax.swing.JLabel" name="jLabel_cantidad1">
       <Properties>
         <Property name="text" type="java.lang.String" value="Cantidad"/>
-      </Properties>
-    </Component>
-    <Component class="javax.swing.JLabel" name="jLabel_subtotal1">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="Subtotal"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel_unidad">
