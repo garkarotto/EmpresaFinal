@@ -182,29 +182,8 @@ public class productoInterfaz extends javax.swing.JFrame {
     }//GEN-LAST:event_jTextField3_unidademedidaActionPerformed
 
     private void jButton1_guardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1_guardarActionPerformed
-        try {
-            // Recoger los valores de los campos de texto
-            String nombre = jTextField1_nombreproducto.getText();
-            double precio = Double.parseDouble(jTextField2_precio.getText());
-            String unidadMedida = jTextField3_unidademedida.getText();
-            String descripcion = jTextField4_descripcion.getText();
-
-            // Crear un nuevo objeto producto
-            producto nuevoProducto = new producto(nombre, precio, unidadMedida, descripcion);
-
-            // Añadir el producto al ArrayList
-            productos.add(nuevoProducto);
-
-            // Confirmación de que el producto se ha guardado
-            System.out.println("el nombre del Producto es : " + nuevoProducto.getNombre());
-            System.out.println("el precio del Producto es:  " + nuevoProducto.getPrecio());
-            System.out.println("la unidad de medida es  " + nuevoProducto.getUnidaddeMedida());
-            System.out.println("la descripcion es   " + nuevoProducto.getDescripcion());
-
-        } catch (NumberFormatException e) {
-            // Manejo de errores en caso de que el precio no sea un número válido
-            System.out.println("Error: El campo de precio debe ser un número.");
-        }
+        
+           
     }//GEN-LAST:event_jButton1_guardarActionPerformed
 
         public class producto {
