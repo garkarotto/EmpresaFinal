@@ -32,7 +32,7 @@ Instanciar facturas y presupuestos.
      */
 
     public static void main(String[] args) {
-        GestorDocumento control = new GestorDocumento();
+       /* GestorDocumento control = new GestorDocumento();
         cliente luquitasCliente = new cliente("lucas", 221, "1900", "521 ");
         cliente facuCliente = new cliente("facu", 221, "1900", "521 ");
         cliente MarianCliente = new cliente("marian", 221, "1900", "521 ");
@@ -73,7 +73,7 @@ Instanciar facturas y presupuestos.
        control.AgregarDocumento(facturaA);
        control.AgregarDocumento(facturaB);
        
-       control.InformeVentaRealizada(LocalDate.of(2024,8,18));
+       control.InformeVentaRealizada(LocalDate.of(2024,8,18)); */
     }
     
 }

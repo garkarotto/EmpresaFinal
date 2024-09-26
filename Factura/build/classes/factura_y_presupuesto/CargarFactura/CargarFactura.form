@@ -195,13 +195,15 @@
                       <Group type="102" alignment="1" attributes="0">
                           <Component id="jLabel_cliente" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="3" attributes="0">
+                          <Group type="103" groupAlignment="0" attributes="0">
                               <Component id="jTextField_nombrecliente" alignment="1" min="-2" max="-2" attributes="0"/>
-                              <Component id="jLabel_nombrecliente" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="jLabel_telefonocliente" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="jTextField_telefono" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="jLabel_direccion" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="jTextField_direccion" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="3" attributes="0">
+                                  <Component id="jLabel_nombrecliente" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="jLabel_telefonocliente" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="jTextField_telefono" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="jLabel_direccion" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="jTextField_direccion" alignment="3" min="-2" max="-2" attributes="0"/>
+                              </Group>
                           </Group>
                       </Group>
                       <Group type="103" alignment="1" groupAlignment="0" attributes="0">

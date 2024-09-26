@@ -14,17 +14,13 @@ public class factura extends documento {
     private String tipo_factura;
 
     //vendedor vendedor, cliente cliente, String fecha_emitido
-    public factura(String tipo_factura, vendedor vendedor, cliente cliente, LocalDate fecha_emitido) {
-        super(vendedor, cliente, fecha_emitido);
-        this.tipo_factura = tipo_factura;
-
-    }
+    
 
     public String getTipo_factura() {
         return tipo_factura;
     }
 
-    public void mostrarProductos() {
+    /*public void mostrarProductos() {
         System.out.println("productos: ");
         //for normal 
         for (int i = 0; i < getDetalles().size(); i++) {
@@ -47,6 +43,6 @@ public class factura extends documento {
 
         System.out.println("---------------------------");
         mostrarProductos();
-    }
+    }*/
 
 }

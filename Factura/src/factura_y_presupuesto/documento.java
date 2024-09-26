@@ -4,7 +4,6 @@
  */
 package factura_y_presupuesto;
 
-import java.util.ArrayList;
 
 /**
  *
@@ -14,7 +13,7 @@ import java.time.LocalDate;
 public class documento {
     private vendedor vendedor;
     private cliente cliente;
-    private ArrayList<detalleproducto> detalleproducto;
+    private Carrito Carrito;
     private LocalDate fecha_emitido;
     
     
@@ -25,39 +24,41 @@ public class documento {
     }
 */
 
-    public documento(vendedor vendedor, cliente cliente, LocalDate fecha_emitido) {
-        this.vendedor = vendedor;
-        this.cliente = cliente;
-         detalleproducto = new ArrayList();
-        this.fecha_emitido = fecha_emitido;
-    }
-
     public vendedor getVendedor() {
         return vendedor;
+    }
+
+    public void setVendedor(vendedor vendedor) {
+        this.vendedor = vendedor;
     }
 
     public cliente getCliente() {
         return cliente;
     }
 
-    public ArrayList<detalleproducto> getDetalles() {
-        return detalleproducto;
+    public void setCliente(cliente cliente) {
+        this.cliente = cliente;
     }
-    
-    //agregar detalle producto
-    public void agregarProducto(detalleproducto detalle){
-     getDetalles().add(detalle);
-    
+
+    public Carrito getCarrito() {
+        return Carrito;
     }
-    //borrar  detalle producto
-    public void borrarProducto (detalleproducto detalle){
-     getDetalles().remove(detalle);
-    
+
+    public void setCarrito(Carrito Carrito) {
+        this.Carrito = Carrito;
     }
+
     public LocalDate getFecha_emitido() {
         return fecha_emitido;
     }
+
+    public void setFecha_emitido(LocalDate fecha_emitido) {
+        this.fecha_emitido = fecha_emitido;
+    }
+
     
+
+   
    
     
 }

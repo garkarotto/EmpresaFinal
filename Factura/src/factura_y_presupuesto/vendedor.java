@@ -9,9 +9,9 @@ public class vendedor {
      private String nombre;
     private String apellido;
     private String razonsocial;
-    private int cuit;
+    private String cuit;
 
-    public vendedor(String nombre, String apellido, String razonsocial, int cuit) {
+    public vendedor(String nombre, String apellido, String razonsocial, String cuit) {
         this.nombre = nombre;
         this.apellido = apellido;
         this.razonsocial = razonsocial;
@@ -35,7 +35,7 @@ public class vendedor {
     }
 
      
-    public int getCuit() {
+    public String getCuit() {
         return cuit;
     }
 

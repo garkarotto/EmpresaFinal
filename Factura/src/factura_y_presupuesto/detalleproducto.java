@@ -9,14 +9,14 @@ package factura_y_presupuesto;
  * @author Elba Aban
  */
 public class detalleproducto {
-    private double cantidad;
-    private double total;
-    private producto producto;
-    private String Descripcion;
-    public detalleproducto(double cantidad,String desc,  producto producto) {
+    private int cantidad; //stock
+    private double subtotal; // ventana factura/presupuesto
+    private producto producto; 
+    private String Descripcion_detallada; //agregar una descripcion
+    public detalleproducto(int cantidad,String desc,  producto producto) {
         this.cantidad = cantidad;
         this.producto = producto;
-        this.Descripcion = desc;
+        this.Descripcion_detallada = desc;
     }
     public producto getProducto(){
         return this.producto;
@@ -24,8 +24,8 @@ public class detalleproducto {
     
     
     public double getSubtotal(){
-        total = getProducto().getPrecio()*getCantidad();
-        return total;
+        subtotal = getProducto().getPrecio()*getCantidad();
+        return subtotal;
     }
     
     public double getCantidad() {
@@ -33,12 +33,10 @@ public class detalleproducto {
     }
  
     public String getDescripcion(){
-        return this.Descripcion;
+        return this.Descripcion_detallada;
     }
 
-    public double getTotal() {
-        return total;
-    }
+  
 
      
 }

@@ -13,18 +13,17 @@ public class presupuesto extends documento {
 
     private LocalDate fecha_caducidad;
 
-    public presupuesto(  vendedor vendedor, cliente cliente, LocalDate fecha_emitido, LocalDate fecha_caducidad) {
-        super(vendedor, cliente, fecha_emitido);
+   
 
-        this.fecha_caducidad = fecha_caducidad;
+    public void setFecha_caducidad(LocalDate fecha){
+        this.fecha_caducidad = fecha;
     }
-
     public LocalDate getFecha_caducidad() {
         return fecha_caducidad;
     }
 
     
-    public void mostrarProductos() {
+    /*public void mostrarProductos() {
         System.out.println("producto: ");
         //for normal 
         for (int i = 0; i < getDetalles().size(); i++) {
@@ -53,5 +52,5 @@ public class presupuesto extends documento {
         mostrarProductos();
          System.out.println("la fecha de emision es : " + getFecha_emitido());
     }
-
+*/
 }
