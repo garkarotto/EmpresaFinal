@@ -19,6 +19,7 @@ public class Cargar_Productos extends javax.swing.JFrame {
     Premenu premenu;
     producto producto;
     detalleproducto detalle;
+    int sumar = 0;
     /**
      * Creates new form Cargar_Productos
      */
@@ -273,40 +274,41 @@ public class Cargar_Productos extends javax.swing.JFrame {
 
     private void GuardarButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_GuardarButtonActionPerformed
   
-        jTextArea_mostrar.setText(""); //esto limpia el cuadrado
+         
         
-        //variables que guardan cositas
         String nombre = t1.getText();
-        double precio = Double.parseDouble(t2.getText());
+        String precio = t2.getText();
         String unidad_medida = t3.getText();
         String marca = t4.getText();
-        int codigo = Integer.parseInt(t5.getText()) ;
-        int cantidad = Integer.parseInt(t6.getText());
+        String codigo = t5.getText() ;
+        String cantidad = t6.getText();
         
-        String cantidadStr = String.valueOf(cantidad);
-        String precioStr = String.valueOf(precio);
-        String codigoStr = String.valueOf(codigo);
-        
-        if (nombre.isEmpty()|| precioStr.isEmpty() || unidad_medida.isEmpty() || marca.isEmpty() || codigoStr.isEmpty() || cantidadStr.isEmpty() ){
+        if (nombre.isEmpty() || t2.getText().isEmpty() || unidad_medida.isEmpty() || marca.isEmpty() || t5.getText().isEmpty() || t6.getText().isEmpty() ){
                 JOptionPane.showMessageDialog(null, "Completar todos los campos.", "Error", JOptionPane.ERROR_MESSAGE);
             }else{
-                producto = new producto (codigo,nombre,precio,unidad_medida,marca); //instancio producto y le paso por parametro las cositas
+                sumar ++;
+                jTextArea_mostrar.setText("");
+                double precio_double = Double.parseDouble(precio);
+                int codigo_int = Integer.parseInt(codigo);
+                int cantidad_int = Integer.parseInt(cantidad);
                 
-                detalleproducto detalle = new detalleproducto(cantidad,producto);
+                producto = new producto (codigo_int,nombre,precio_double,unidad_medida,marca); //instancio producto y le paso por parametro las cositas
                 
-                menu.getFacturas().getCarrito().AgregarDetalle(detalle); //paso vendedor a menu por parametro
+                detalleproducto Detalle = new detalleproducto(cantidad_int,producto);
                 
-                for ( int i = 0; i<menu.getFacturas().getCarrito().getDetalle().size();i++){
-                    jTextArea_mostrar.append( " \n Nombre: "+ menu.getFacturas().getCarrito().getDetalle().get(i).getProducto().getNombre()+
-                        "\n Precio: "+ menu.getFacturas().getCarrito().getDetalle().get(i).getProducto().getPrecio() +
-                        "\n Unidad de medida: "+ menu.getFacturas().getCarrito().getDetalle().get(i).getProducto().getUnidad_medida() +
-                        "\n Marca: "+ menu.getFacturas().getCarrito().getDetalle().get(i).getProducto().getMarca() +
-                        "\n Codigo: "+ menu.getFacturas().getCarrito().getDetalle().get(i).getProducto().getCodigo() +
-                        "\n Stock: "+ menu.getFacturas().getCarrito().getDetalle().get(i).getCantidad() +
-                        "\n ------------------------------------------------------");
+                menu.getFacturas().getCarrito().AgregarDetalle(Detalle); //paso vendedor a menu por parametro
+                
+               for (detalleproducto detalle : menu.getFacturas().getCarrito().getDetalle()) {
+                    jTextArea_mostrar.append(" \n Nombre: " + detalle.getProducto().getNombre() +
+                     "\n Precio: " + detalle.getProducto().getPrecio() +
+                     "\n Unidad de medida: " + detalle.getProducto().getUnidad_medida() +
+                     "\n Marca: " + detalle.getProducto().getMarca() +
+                     "\n Código: " + detalle.getProducto().getCodigo() +
+                     "\n Stock: " + detalle.getCantidad() +
+                     "\n ------------------------------------------------------");
                 }
                 Borrar ();
-        }    
+        }
      
     }//GEN-LAST:event_GuardarButtonActionPerformed
 

@@ -203,7 +203,7 @@ public class CargarVendedor extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jToggleButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton1ActionPerformed
-            jTextArea_Mostrar.setText("");
+            
             String nombre = tNom.getText();
             String apellido = tAp.getText();
             String razsoc = tRS.getText();
@@ -212,18 +212,19 @@ public class CargarVendedor extends javax.swing.JFrame {
             if (nombre.isEmpty()|| apellido.isEmpty() || razsoc.isEmpty() || cuit.isEmpty() ){
                 JOptionPane.showMessageDialog(null, "Completar todos los campos.", "Error", JOptionPane.ERROR_MESSAGE);
             }else{
+                jTextArea_Mostrar.setText("");
                 vend = new vendedor (nombre, apellido, razsoc, cuit);  //instancio vendedor
                 menu.getFacturas().getVendedores().AgregarVendedor(vend); //paso vendedor a menu por parametro
                 
-                for ( int i = 0; i<menu.getFacturas().getVendedores().getVendedores().size();i++){
-                    jTextArea_Mostrar.append( "\n Nombre: " + menu.getFacturas().getVendedores().getVendedores().get(i).getNombre() +
-                    "\n Apellido: " + menu.getFacturas().getVendedores().getVendedores().get(i).getApellido()  + 
-                    "\n Razon Social: " + menu.getFacturas().getVendedores().getVendedores().get(i).getRazonsocial() +
-                    "\n CUIT: " + menu.getFacturas().getVendedores().getVendedores().get(i).getCuit() +
+                
+                for (vendedor vendedor : menu.getFacturas().getVendedores().getVendedores()){
+                    jTextArea_Mostrar.append("\n Nombre: " + vendedor.getNombre() +
+                     "\n Apellido: " + vendedor.getApellido() + 
+                     "\n Razón Social: " + vendedor.getRazonsocial() +
+                    "\n CUIT: " + vendedor.getCuit() +
                     "\n -------------------------");
                 }
-                 
-                 
+                   
                 BorrarCampos();
             }
             
