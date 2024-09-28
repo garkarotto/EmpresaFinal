@@ -8,12 +8,16 @@ package factura_y_presupuesto;
  *
  * @author Elba Aban
  */
-import java.time.LocalDate;
+
+import java.util.ArrayList;
 public class factura extends documento {
 
     private String tipo_factura;
 
-    //vendedor vendedor, cliente cliente, String fecha_emitido
+    public void setTipo_factura(String tipo_factura) {
+        this.tipo_factura = tipo_factura;
+    }
+
     
 
     public String getTipo_factura() {

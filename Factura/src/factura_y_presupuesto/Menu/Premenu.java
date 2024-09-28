@@ -3,33 +3,29 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package factura_y_presupuesto.Menu;
+import factura_y_presupuesto.Menu.Menu;
 import factura_y_presupuesto.CargarProducto.Cargar_Productos;
 import factura_y_presupuesto.CargarVendedor.CargarVendedor;
 import factura_y_presupuesto.Carrito;
 import factura_y_presupuesto.vendedor;
-import factura_y_presupuesto.documento;
 /**
  *
  * @author garca
  */
 public class Premenu extends javax.swing.JFrame {
-    private documento Documento;
+    Menu menu;
     private vendedor vendedor;
     private Carrito carrito;
+    CargarVendedor cargarvendedor;
     /**
      * Creates new form Menu
      */
     public Premenu() {
         initComponents();
-        Documento = new documento();
+        menu = new Menu();
+        cargarvendedor = null;
     }
-    public void cargarVendedor(vendedor vendedor){
-        this.vendedor = vendedor;
-    }
-    public void setVendedorProducto(vendedor vendedor, Carrito carrito){
-        this.vendedor = vendedor;
-        this.carrito = carrito;
-    }
+    
     
 
     /**
@@ -132,16 +128,16 @@ public class Premenu extends javax.swing.JFrame {
     }//GEN-LAST:event_IrprodButtonActionPerformed
 
     private void MenuButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MenuButtonActionPerformed
-               Menu men= new Menu();
-               men.setVendedorCarrito(vendedor,carrito);
-               men.setVisible(true);
-               this.setVisible(false);        // TODO add your handling code here:
+            menu.setVisible(true);
+            this.setVisible(false);        // TODO add your handling code here:
     }//GEN-LAST:event_MenuButtonActionPerformed
 
     private void IrvendButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_IrvendButtonActionPerformed
-CargarVendedor carv= new CargarVendedor();
-               carv.setVisible(true);
-               this.setVisible(false);         // TODO add your handling code here:
+        if (cargarvendedor == null){
+            cargarvendedor= new CargarVendedor(menu,this);
+        }      
+        cargarvendedor.setVisible(true);
+        this.setVisible(false);        
     }//GEN-LAST:event_IrvendButtonActionPerformed
 
     /**

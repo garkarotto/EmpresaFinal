@@ -11,27 +11,17 @@ package factura_y_presupuesto;
  */
 import java.time.LocalDate;
 public class documento {
-    private vendedor vendedor;
+    private ListaVendedores vendedores;
     private cliente cliente;
+   
     private Carrito Carrito;
     private LocalDate fecha_emitido;
     
+    public documento(){
+        vendedores = new ListaVendedores();
+    }
     
-/*public factura(String tipo_factura, factura_y_presupuesto.vendedor vendedor,
-            factura_y_presupuesto.cliente cliente, String fecha_emitido) {
-        super(vendedor, cliente, fecha_emitido);
-        this.tipo_factura = tipo_factura;
-    }
-*/
-
-    public vendedor getVendedor() {
-        return vendedor;
-    }
-
-    public void setVendedor(vendedor vendedor) {
-        this.vendedor = vendedor;
-    }
-
+    
     public cliente getCliente() {
         return cliente;
     }
@@ -54,6 +44,14 @@ public class documento {
 
     public void setFecha_emitido(LocalDate fecha_emitido) {
         this.fecha_emitido = fecha_emitido;
+    }
+
+    public ListaVendedores getVendedores() {
+        return vendedores;
+    }
+
+    public void setVendedores(ListaVendedores vendedores) {
+        this.vendedores = vendedores;
     }
 
     

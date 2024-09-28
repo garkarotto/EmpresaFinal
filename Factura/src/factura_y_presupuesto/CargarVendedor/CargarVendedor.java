@@ -3,21 +3,36 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package factura_y_presupuesto.CargarVendedor;
-
-import factura_y_presupuesto.Menu.Premenu;
+import factura_y_presupuesto.Menu.Menu;
 import factura_y_presupuesto.vendedor;
+import factura_y_presupuesto.Menu.Premenu;
 /**
  *
  * @author Alejandro Martínez
  */
 public class CargarVendedor extends javax.swing.JFrame {
-
+    Menu menu;
+    Premenu premenu;
     vendedor vend;
+    boolean activar;
     /**
      * Creates new form CargarVendedor
+     * @param menu
      */
-    public CargarVendedor() {
+    public CargarVendedor(Menu menu, Premenu premenu) {
         initComponents();
+        this.menu = menu;
+        this.premenu = premenu;
+    }
+
+    private CargarVendedor() {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+    public void BorrarCampos(){
+        tNom.setText("");
+        tAp.setText("");
+        tRS.setText("");
+        tC.setText("");
     }
 
     public vendedor getvendedor(){
@@ -192,28 +207,20 @@ public class CargarVendedor extends javax.swing.JFrame {
             String razsoc = tRS.getText();
             String cuit = tC.getText();
             
-             vend = new vendedor (nombre, apellido, razsoc, cuit);
-            
-            
+            vend = new vendedor (nombre, apellido, razsoc, cuit);  //instancio vendedor
+            menu.getFacturas().getVendedores().AgregarVendedor(vend); //paso vendedor a menu por parametro
             a.setText( "Nombre: " + vend.getNombre() +
               "\n Apellido: " + vend.getApellido()  + 
               "\n Razon Social: " + vend.getRazonsocial() +
               "\n CUIT: " + vend.getCuit() );
             
-      
-     tNom.setText("");
-     tAp.setText("");
-     tRS.setText("");
-     tC.setText("");
+            BorrarCampos();
            
     }//GEN-LAST:event_jToggleButton1ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        Premenu pre= new Premenu();
- 
-         pre.cargarVendedor(vend);
-               pre.setVisible(true);
-               this.setVisible(false);         // TODO add your handling code here:
+            premenu.setVisible(true);
+            this.setVisible(false);         // TODO add your handling code here:
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void tNomActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tNomActionPerformed
@@ -248,10 +255,8 @@ public class CargarVendedor extends javax.swing.JFrame {
         //</editor-fold>
 
         /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new CargarVendedor().setVisible(true);
-            }
+        java.awt.EventQueue.invokeLater(() -> {
+            new CargarVendedor().setVisible(true);
         });
     }
 

@@ -4,26 +4,30 @@
  */
 package factura_y_presupuesto.Menu;
 import factura_y_presupuesto.CargarPresupuesto.CargarPresupuesto;
-import factura_y_presupuesto.CargarVendedor.CargarVendedor;
-import factura_y_presupuesto.Carrito;
-import factura_y_presupuesto.vendedor;
+import factura_y_presupuesto.presupuesto;
+import factura_y_presupuesto.factura;
 /**
  *
  * @author Alejandro Martínez
  */
 public class Menu extends javax.swing.JFrame {
-    vendedor vendedor;
-    Carrito carrito;
+    private factura facturas;  //tanto factura como presupuesto tienen array de vendedores y conocen a un cliente
+    private presupuesto presupuestos;
     /**
      * Creates new form Menu
      */
     public Menu() {
         initComponents();
+        facturas = new factura();
+        presupuestos = new presupuesto();
     }
-    public void setVendedorCarrito(vendedor v, Carrito carrito){
-        this.vendedor = v;
-        this.carrito = carrito;
+    public factura getFacturas(){
+        return this.facturas;
     }
+    public presupuesto getPresupuestos(){
+        return this.presupuestos;
+    }
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -120,7 +124,6 @@ public class Menu extends javax.swing.JFrame {
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
             CargarPresupuesto pres = new CargarPresupuesto();
-            pres.setVendedorCarrito(vendedor,carrito);
             pres.MostrarNombre();
             
             pres.setVisible(true);
