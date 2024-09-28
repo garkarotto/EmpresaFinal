@@ -17,6 +17,7 @@ public class Premenu extends javax.swing.JFrame {
     private vendedor vendedor;
     private Carrito carrito;
     CargarVendedor cargarvendedor;
+    Cargar_Productos car;
     /**
      * Creates new form Menu
      */
@@ -24,6 +25,7 @@ public class Premenu extends javax.swing.JFrame {
         initComponents();
         menu = new Menu();
         cargarvendedor = null;
+        car = null;
     }
     
     
@@ -119,11 +121,11 @@ public class Premenu extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void IrprodButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_IrprodButtonActionPerformed
-       Cargar_Productos car= new Cargar_Productos();
-       car.setVendedor(vendedor);
-       
-               car.setVisible(true);
-               this.setVisible(false);
+       if (car == null){
+           car= new Cargar_Productos(menu,this);
+       }
+            car.setVisible(true);
+            this.setVisible(false);
                
     }//GEN-LAST:event_IrprodButtonActionPerformed
 

@@ -19,6 +19,7 @@ public class documento {
     
     public documento(){
         vendedores = new ListaVendedores();
+        Carrito = new Carrito();
     }
     
     

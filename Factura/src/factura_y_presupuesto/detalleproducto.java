@@ -12,11 +12,11 @@ public class detalleproducto {
     private int cantidad; //stock
     private double subtotal; // ventana factura/presupuesto
     private producto producto; 
-    private String Descripcion_detallada; //agregar una descripcion
-    public detalleproducto(int cantidad,String desc,  producto producto) {
+    
+    public detalleproducto(int cantidad,  producto producto) {
         this.cantidad = cantidad;
         this.producto = producto;
-        this.Descripcion_detallada = desc;
+        
     }
     public producto getProducto(){
         return this.producto;
@@ -32,11 +32,7 @@ public class detalleproducto {
         return cantidad;
     }
  
-    public String getDescripcion(){
-        return this.Descripcion_detallada;
-    }
 
-  
 
      
 }

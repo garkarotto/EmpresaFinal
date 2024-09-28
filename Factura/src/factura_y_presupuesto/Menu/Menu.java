@@ -49,6 +49,11 @@ public class Menu extends javax.swing.JFrame {
         jLabel_Titulo.setText("Menú");
 
         jButton1.setText("Crear Factura");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         jButton2.setText("Crear Presupuesto");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
@@ -117,7 +122,7 @@ public class Menu extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void VolverButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_VolverButtonActionPerformed
-    Premenu pre= new Premenu();
+               Premenu pre= new Premenu();
                pre.setVisible(true);
                this.setVisible(false);        // TODO add your handling code here:
     }//GEN-LAST:event_VolverButtonActionPerformed
@@ -130,6 +135,10 @@ public class Menu extends javax.swing.JFrame {
             this.setVisible(false);// TODO add your handling code here:
             
     }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments

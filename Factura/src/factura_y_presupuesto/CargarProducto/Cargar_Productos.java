@@ -7,25 +7,25 @@ import factura_y_presupuesto.Menu.Premenu;
 import factura_y_presupuesto.detalleproducto;
 import factura_y_presupuesto.producto;
 import factura_y_presupuesto.Carrito;
-import factura_y_presupuesto.vendedor;
-import java.util.ArrayList;
-import javax.swing.DefaultListModel;
+import javax.swing.DefaultListModel; 
+import factura_y_presupuesto.Menu.Menu;
+import javax.swing.JOptionPane; //tirar mensaje
 /**
  *
  * @author Alejandro Martínez
  */
 public class Cargar_Productos extends javax.swing.JFrame {
-    Carrito carrito = new Carrito();
-    vendedor vendedor;
+    Menu menu;
+    Premenu premenu;
+    producto producto;
+    detalleproducto detalle;
     /**
      * Creates new form Cargar_Productos
      */
-    public Cargar_Productos() {
+    public Cargar_Productos(Menu menu, Premenu premenu) {
         initComponents();
-      
-    }
-    public void setVendedor(vendedor vendedor){
-        this.vendedor = vendedor;
+        this.menu = menu;
+        this.premenu = premenu;
     }
     public void Borrar (){
          t1.setText("");
@@ -33,8 +33,7 @@ public class Cargar_Productos extends javax.swing.JFrame {
      t3.setText("");
      t4.setText("");
      t5.setText("");
-     jTextField_stock.setText("");
-     jTextField_descripciondetallada.setText("");
+     t6.setText("");
     }
 
     /**
@@ -66,9 +65,7 @@ public class Cargar_Productos extends javax.swing.JFrame {
         jTextArea_mostrar = new javax.swing.JTextArea();
         jLabel8 = new javax.swing.JLabel();
         jLabel_stock = new javax.swing.JLabel();
-        jTextField_stock = new javax.swing.JTextField();
-        jTextField_descripciondetallada = new javax.swing.JTextField();
-        jLabel7 = new javax.swing.JLabel();
+        t6 = new javax.swing.JTextField();
         GuardarButton = new javax.swing.JButton();
         VolverButton = new javax.swing.JButton();
         jLabel_mostrar = new javax.swing.JLabel();
@@ -185,10 +182,7 @@ public class Cargar_Productos extends javax.swing.JFrame {
         jLabel8.setText("Cargar detalle");
 
         jLabel_stock.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jLabel_stock.setText("Stock");
-
-        jLabel7.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jLabel7.setText("Descripcion detallada");
+        jLabel_stock.setText("Cantidad");
 
         GuardarButton.setText("Guardar");
         GuardarButton.addActionListener(new java.awt.event.ActionListener() {
@@ -214,39 +208,35 @@ public class Cargar_Productos extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(6, 6, 6)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jLabel_mensajeagregar)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jLabel_mostrar)
-                                .addGap(130, 130, 130))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(53, 53, 53))
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addGroup(layout.createSequentialGroup()
-                                                .addGap(10, 10, 10)
-                                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                    .addComponent(jLabel7)
-                                                    .addComponent(GuardarButton)
-                                                    .addComponent(jLabel_stock)))
-                                            .addComponent(jLabel8))
-                                        .addGap(39, 39, 39)
-                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(jTextField_descripciondetallada, javax.swing.GroupLayout.PREFERRED_SIZE, 205, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(jTextField_stock, javax.swing.GroupLayout.PREFERRED_SIZE, 205, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 18, Short.MAX_VALUE)
-                                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 296, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                        .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel_mensajeagregar)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel_mostrar)
+                        .addGap(130, 130, 130))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(VolverButton)))
+                        .addComponent(VolverButton))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(51, 51, 51)
+                                .addComponent(jLabel8))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addContainerGap()
+                                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(17, 17, 17)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(GuardarButton)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(jLabel_stock)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(t6, javax.swing.GroupLayout.PREFERRED_SIZE, 205, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 71, Short.MAX_VALUE)
+                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 296, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -262,22 +252,15 @@ public class Cargar_Productos extends javax.swing.JFrame {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(51, 51, 51)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel8)
-                                .addGap(18, 18, 18)
-                                .addComponent(jLabel_stock)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jLabel7))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(36, 36, 36)
-                                .addComponent(jTextField_stock, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jTextField_descripciondetallada, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(8, 8, 8)
+                        .addGap(3, 3, 3)
+                        .addComponent(jLabel8)
+                        .addGap(37, 37, 37)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel_stock)
+                            .addComponent(t6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(18, 18, 18)
                         .addComponent(GuardarButton)
-                        .addGap(135, 135, 135))
+                        .addGap(184, 184, 184))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 387, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(146, 146, 146)))
@@ -290,52 +273,40 @@ public class Cargar_Productos extends javax.swing.JFrame {
 
     private void GuardarButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_GuardarButtonActionPerformed
   
+        jTextArea_mostrar.setText(""); //esto limpia el cuadrado
+        
         //variables que guardan cositas
         String nombre = t1.getText();
         double precio = Double.parseDouble(t2.getText());
         String unidad_medida = t3.getText();
         String marca = t4.getText();
         int codigo = Integer.parseInt(t5.getText()) ;
+        int cantidad = Integer.parseInt(t6.getText());
         
+        String cantidadStr = String.valueOf(cantidad);
+        String precioStr = String.valueOf(precio);
+        String codigoStr = String.valueOf(codigo);
         
-        
-        producto Producto = new producto (codigo,nombre,precio,unidad_medida,marca); //instancio producto y le paso por parametro las cositas
-        
-        
-       /*CargarDetalle VentanaDetalle = new CargarDetalle();  //Creo un objeto de tipo ventana CargarDetalle
-       // VentanaDetalle.setVisible(true);// con esta funcion hago que VentanaDetalle sea visible , significa que aparezca
-        VentanaDetalle.setproducto(Producto); */
-      
-       //variables que guardan mas cositas
-      int stock = Integer.parseInt(jTextField_stock.getText()) ;
-      String DescripDetall = jTextField_descripciondetallada.getText();
-      
-      detalleproducto det = new detalleproducto (stock, DescripDetall, Producto); //instancio detalle y le guardo las cositas nuevas junto con el producto que instancie antes
-      
-      carrito.AgregarDetalle(det); //le digo a carrito (instancie carrito arriba de todo) que llame a la funcion agregardetalle, esta hace que agregue el objeto detalle a mi coleccion
-      
-    jTextArea_mostrar.setText(""); //esto limpia el cuadrado
-    
-    int guardarIndex = carrito.getDetalle().size(); /*aca voy a carrito, acceso a la coleccion con getDetalle y aplica el size(), size me devuelve el indice de la ultima coleccion
-                                                    osea que si tengo veinte objetos detalles guardados, guardarindex me devuelve el 20 */
-        
-    
-       //Aplico un for que recorre la coleccion y le dice al cuadrado blanco que me imprima los siguiente datos, hasta que termine de recorrer toda la coleccion
-        for (int i=0;i<guardarIndex;i++){
-        jTextArea_mostrar.append(" \n Nombre: "+carrito.getDetalle().get(i).getProducto().getNombre()+
-        "\n Precio: "+ carrito.getDetalle().get(i).getProducto().getPrecio() +
-        "\n Unidad de medida: "+ carrito.getDetalle().get(i).getProducto().getUnidad_medida() +
-        "\n Marca: "+ carrito.getDetalle().get(i).getProducto().getMarca() +
-        "\n Codigo: "+ carrito.getDetalle().get(i).getProducto().getCodigo() +
-        "\n Stock: "+ carrito.getDetalle().get(i).getCantidad() +
-        "\n Descripcion: "+ carrito.getDetalle().get(i).getDescripcion()+
-        "\n ------------------------------------------------------");
-    }
-      //hice una funcion donde pone en blanco todos los paneles blancos (la funcion esta arriba)
-     Borrar();
-     
-     //Aca hago que muestre el guardarindex en un label que se encuentra arriba al lado de productos cargados
-     jLabel_mostrar.setText(String.valueOf(guardarIndex));
+        if (nombre.isEmpty()|| precioStr.isEmpty() || unidad_medida.isEmpty() || marca.isEmpty() || codigoStr.isEmpty() || cantidadStr.isEmpty() ){
+                JOptionPane.showMessageDialog(null, "Completar todos los campos.", "Error", JOptionPane.ERROR_MESSAGE);
+            }else{
+                producto = new producto (codigo,nombre,precio,unidad_medida,marca); //instancio producto y le paso por parametro las cositas
+                
+                detalleproducto detalle = new detalleproducto(cantidad,producto);
+                
+                menu.getFacturas().getCarrito().AgregarDetalle(detalle); //paso vendedor a menu por parametro
+                
+                for ( int i = 0; i<menu.getFacturas().getCarrito().getDetalle().size();i++){
+                    jTextArea_mostrar.append( " \n Nombre: "+ menu.getFacturas().getCarrito().getDetalle().get(i).getProducto().getNombre()+
+                        "\n Precio: "+ menu.getFacturas().getCarrito().getDetalle().get(i).getProducto().getPrecio() +
+                        "\n Unidad de medida: "+ menu.getFacturas().getCarrito().getDetalle().get(i).getProducto().getUnidad_medida() +
+                        "\n Marca: "+ menu.getFacturas().getCarrito().getDetalle().get(i).getProducto().getMarca() +
+                        "\n Codigo: "+ menu.getFacturas().getCarrito().getDetalle().get(i).getProducto().getCodigo() +
+                        "\n Stock: "+ menu.getFacturas().getCarrito().getDetalle().get(i).getCantidad() +
+                        "\n ------------------------------------------------------");
+                }
+                Borrar ();
+        }    
      
     }//GEN-LAST:event_GuardarButtonActionPerformed
 
@@ -344,9 +315,7 @@ public class Cargar_Productos extends javax.swing.JFrame {
     }//GEN-LAST:event_t5ActionPerformed
 
     private void VolverButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_VolverButtonActionPerformed
-    Premenu pre= new Premenu();
-    pre.setVendedorProducto(vendedor,carrito);
-               pre.setVisible(true);
+                premenu.setVisible(true);
                this.setVisible(false);         // TODO add your handling code here:
     }//GEN-LAST:event_VolverButtonActionPerformed
 
@@ -373,7 +342,6 @@ public class Cargar_Productos extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel_mensajeagregar;
     private javax.swing.JLabel jLabel_mostrar;
@@ -383,12 +351,11 @@ public class Cargar_Productos extends javax.swing.JFrame {
     private javax.swing.JScrollBar jScrollBar1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTextArea jTextArea_mostrar;
-    private javax.swing.JTextField jTextField_descripciondetallada;
-    private javax.swing.JTextField jTextField_stock;
     private javax.swing.JTextField t1;
     private javax.swing.JTextField t2;
     private javax.swing.JTextField t3;
     private javax.swing.JTextField t4;
     private javax.swing.JTextField t5;
+    private javax.swing.JTextField t6;
     // End of variables declaration//GEN-END:variables
 }
